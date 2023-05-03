@@ -19,10 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('users', function (Request $request) {
-    return $request;
-//    return view('users');
-})->name('users');
+//Route::post('users', function (Request $request) {
+//    return $request;
+////    return view('users');
+//})->name('users');
+
+Route::get('users/{name}', function ($name) {
+
+    if ($name == "Muhammed")
+        return 'Admin';
+    else
+        return 'User';
+
+//    return $name;
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
