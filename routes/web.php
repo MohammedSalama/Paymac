@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Blade.admin-dashboard');
 });
 
 //Route::post('users', function (Request $request) {
